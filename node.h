@@ -13,12 +13,9 @@ using namespace std;
  public: 
     //constructor
     Node(int newData):data(newData), next(nullptr){}
-    
-    //Destructor
-    ~Node();
 
     int data;
-    Node* next;     
+    Node* next;        
  };
 
  #endif

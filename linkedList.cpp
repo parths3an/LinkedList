@@ -12,7 +12,7 @@
 LinkedList::~LinkedList()
 {
     //Will have to delete one by by not directly like this
-    delete head;
+    //delete head;
 }
 
 Node* LinkedList::getRoot()
@@ -28,8 +28,8 @@ int LinkedList::getSize()
 /**
  * Inserting in the sorted order;
  * First find the place to insert; Inserting in order will also 
- * help you do find efficiently, but will had worst time for insert
- * the runtime for insert will be O(log(n))
+ * help you do find efficiently, but will have worst time for insert
+ * the runtime for insert will be O(n)
  */ 
 
 bool LinkedList::insert(int newData)
@@ -39,6 +39,7 @@ bool LinkedList::insert(int newData)
     {
         Node* tempNode = new Node(newData);
         head->next = tempNode;
+        size++;
         return true;
     }
     //If head is not null
@@ -46,15 +47,22 @@ bool LinkedList::insert(int newData)
     
     Node* curr = head;
     Node* prev = head;
-    
-    while(curr->data > newData)
+    Node* newNode = new Node(newData);
+
+    while(curr->data != newData && curr->next != nullptr)
     {
-        
+        curr = curr->next;
 
-
-
-    } 
-
+        if (curr->data == newData)
+        {
+            cout << "The data you are looking for exist in the LL; can not insert duplicates" << endl;
+            return false; 
+        }
+    }
+    //Inserting at the end of the LL
+    curr->next = newNode; 
+    size++;
+    return true;
 }
 
 bool LinkedList::find(int newData)
@@ -78,6 +86,12 @@ bool LinkedList::find(int newData)
     return false; 
 }
 
+bool LinkedList::deleteNode(int data)
+{
+
+
+    return true;
+}
  
 
 #endif
