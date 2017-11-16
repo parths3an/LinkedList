@@ -17,7 +17,7 @@ public:
     ~LinkedList();
 
     //Accessor function
-    Node* getRoot();
+    int getRoot();
 
     //Will return the current number of elements in the LL
     int getSize();

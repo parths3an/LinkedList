@@ -13,9 +13,9 @@ LinkedList::~LinkedList()
     //delete head;
 }
 
-Node* LinkedList::getRoot()
+int LinkedList::getRoot()
 {
-    return head;
+    return head->data;
 }
 
 int LinkedList::getSize()
@@ -35,10 +35,10 @@ bool LinkedList::insert(int newData)
     //If head is null, no need to check
     if(head == nullptr)
     {
-        Node* tempNode = new Node(newData);
-        head->next = tempNode;
-        size++;
-        return true;
+       Node* tempNode = new Node(newData);
+       head = tempNode;
+       size++;
+       return true;
     }
     //If head is not null
     //find a place for the node to insert
@@ -70,7 +70,13 @@ bool LinkedList::find(int newData)
         return false;
     }
     Node* curr= head;
-        
+    
+    if ( curr->data == newData)
+    {
+    	cout << "The data you are looking for is in the LL\n";
+    	return true;
+    }
+    //Will check for non-head nodes only
     while(curr->data != newData && curr->next != nullptr)
     {
         curr = curr->next;
@@ -80,7 +86,7 @@ bool LinkedList::find(int newData)
             return true; 
         }
     }
-    cout << "Reached end of LL; The data you are looking for is not found.";
+    cout << "Reached end of LL; The data you are looking for is not found.\n";
     return false; 
 }
 

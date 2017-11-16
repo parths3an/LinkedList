@@ -13,11 +13,16 @@ int main()
     cout << "The size is:" << l1.getSize();
 
     cout << "Inserting 3 elements..." << endl;
-    l1.insert(25);
-
-//    cout << " The new root and size is: " << l1.getRoot() << " " << l1.getSize() << endl; 
+    bool t = l1.insert(25);
+    bool t1 = l1.insert(30);
+    bool t2 = l1.insert(-13);
+	
+    cout << " The new root is: " << l1.getRoot() << " and size is:" << l1.getSize() << endl; 
     
+    cout << endl << "Now testing find...\n"; 
+    bool testFind = l1.find(-25);
 
+ 
     //Delete the objects on the heap
    
     return 0;

@@ -12,7 +12,7 @@ using namespace std;
  {
  public: 
     //constructor
-    Node(int newData):data(newData), next(nullptr){}
+    Node(int newData):data(newData){}
 
     int data;
     Node* next;        
