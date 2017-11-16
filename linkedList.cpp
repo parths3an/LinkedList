@@ -42,11 +42,14 @@ bool LinkedList::insert(int newData)
     }
     //If head is not null
     //find a place for the node to insert
-    
-    Node* curr = head;
-    Node* prev = head;
-    Node* newNode = new Node(newData);
+    if ( head->data == newData)
+	{
+	  cout << "Can not insert dulplicate data;" << newData << " exist in the LL\n";
+	  return true;	
+	}
 
+    Node* curr = head;
+    Node* newNode = new Node(newData);
     while(curr->data != newData && curr->next != nullptr)
     {
         curr = curr->next;
