@@ -10,7 +10,7 @@
 LinkedList::~LinkedList()
 {
     //Will have to delete one by by not directly like this
-    //delete head;
+    delete head;
 }
 
 int LinkedList::getRoot()

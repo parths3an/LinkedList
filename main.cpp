@@ -32,8 +32,19 @@ int main()
     cout << "LL after deleting head: ";
     l1.printLL();
     cout << "The new root is: " << l1.getRoot() << " and size is: " << l1.getSize() << endl; 
-   
+  
+    cout << "inserting 3 more values in LL" << endl;
+    t = l1.insert(-78);
+    t = l1.insert(32);
+    t = l1.insert(0);
+
+    
+    cout << "before deleting the middle element -78, the LL looks like: \n";
+    l1.printLL();
+
+    l1.deleteNode(-78);
+    cout << "After deleting the middle element -78, the LL looks like: \n";
+    l1.printLL();	
     //Delete the objects on the heap
-   
     return 0;
 }
