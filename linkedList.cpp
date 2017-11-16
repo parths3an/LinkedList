@@ -112,6 +112,7 @@ bool LinkedList::deleteNode(int deleteData)
             head = curr->next;
             delete prevHead;
             cout << "Deleted the node " << deleteData << endl;
+            size--;
             return true;
         }
 
@@ -124,6 +125,7 @@ bool LinkedList::deleteNode(int deleteData)
                 Node* toBeDeleted = curr;
                 prev->next = curr->next; 
                 delete toBeDeleted;
+                size--;
                 return true;
             }
         }
@@ -137,3 +139,20 @@ bool LinkedList::deleteNode(int deleteData)
 }
  
 
+void LinkedList::printLL() const 
+{
+    if ( head == nullptr)
+    {
+        cout << "LL is empty -___-\n";
+    }
+    else //LL is not null 
+    {
+        Node* curr = head;
+        while( curr->next != nullptr)
+        {
+            cout << curr->data << " "; 
+            curr = curr->next;
+        }
+        cout << endl;
+    }
+}

@@ -28,6 +28,8 @@ public:
     //will return true if found and false if does not exist
     bool find(int data);
 
+    //will help you print the content of the LL
+    void printLL() const; 
     /**
      * will return true if successfully deleted and false if does
      * not exist or not able to delete
