@@ -2,8 +2,6 @@
  * node.cpp
  * definitation of node.cpp
  */ 
-#ifndef NODE_CPP
-#define NODE_CPP
 
  #include "node.h"
  #include "linkedList.h"
@@ -94,4 +92,3 @@ bool LinkedList::deleteNode(int data)
 }
  
 
-#endif

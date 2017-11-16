@@ -6,7 +6,7 @@
 #define LINKEDLIST_H
 
 #include "node.h"
-
+using namespace std;
 class LinkedList
 {
 public: 
