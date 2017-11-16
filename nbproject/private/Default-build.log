@@ -1,0 +1,3 @@
+g++ -c main.cpp 
+g++ -c linkedList.cpp
+g++ -o main main.o linkedlist.o

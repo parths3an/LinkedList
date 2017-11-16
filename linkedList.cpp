@@ -93,8 +93,44 @@ bool LinkedList::find(int newData)
     return false; 
 }
 
-bool LinkedList::deleteNode(int data)
+bool LinkedList::deleteNode(int deleteData)
 {
+    if (head == nullptr)
+    { //There are no elements in the LinkedList
+        cout << "This is an empty LL\n";
+        return false;
+    }
+    else 
+    { //Find the node, if found replace and reconnect the link
+        Node* curr = head; 
+        Node* prev = head;
+        //The case when head the node you are trying to delete
+
+        if ( curr->data == deleteData)
+        {
+            Node* prevHead = curr;
+            head = curr->next;
+            delete prevHead;
+            cout << "Deleted the node " << deleteData << endl;
+            return true;
+        }
+
+        while( curr->data != deleteData && curr->next != nullptr)
+        {
+            prev = curr;
+            curr = curr->next;
+            if( curr->data == deleteData)
+            {
+                Node* toBeDeleted = curr;
+                prev->next = curr->next; 
+                delete toBeDeleted;
+                return true;
+            }
+        }
+        cout << "Reached the end of the LL " << deleteData;
+        cout << " is not found in LL\n";
+        return false;
+    }    
 
 
     return true;

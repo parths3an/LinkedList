@@ -24,7 +24,11 @@ int main()
     cout << endl << "Now testing find...\n"; 
     bool testFind = l1.find(-25);
 
- 
+    cout << "Now testing the delete function...\n";
+    l1.deleteNode(25);
+    cout << "After deleting the headm you have...\n";
+    cout << " The new root is: " << l1.getRoot() << " and size is:" << l1.getSize() << endl; 
+   
     //Delete the objects on the heap
    
     return 0;

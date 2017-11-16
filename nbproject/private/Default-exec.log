@@ -1,0 +1,20 @@
+called: /usr/bin/g++
+	/Users/kingcobra/Desktop/C++/LinkedList
+	/usr/bin/g++
+	-c
+	main.cpp
+
+called: /usr/bin/g++
+	/Users/kingcobra/Desktop/C++/LinkedList
+	/usr/bin/g++
+	-c
+	linkedList.cpp
+
+called: /usr/bin/g++
+	/Users/kingcobra/Desktop/C++/LinkedList
+	/usr/bin/g++
+	-o
+	main
+	main.o
+	linkedlist.o
+
