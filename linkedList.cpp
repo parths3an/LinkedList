@@ -104,8 +104,8 @@ bool LinkedList::deleteNode(int deleteData)
     { //Find the node, if found replace and reconnect the link
         Node* curr = head; 
         Node* prev = head;
-        //The case when head the node you are trying to delete
 
+        //The case when head the node you are trying to delete
         if ( curr->data == deleteData)
         {
             Node* prevHead = curr;
@@ -116,17 +116,33 @@ bool LinkedList::deleteNode(int deleteData)
             return true;
         }
 
-        while( curr->data != deleteData && curr->next != nullptr)
+        //If you are trying to delete the node in between
+        while( curr != nullptr)
         {
             prev = curr;
             curr = curr->next;
             if( curr->data == deleteData)
             {
                 Node* toBeDeleted = curr;
+                if (curr->next != nullptr)
+                {
                 prev->next = curr->next; 
                 delete toBeDeleted;
                 size--;
                 return true;
+                }
+                else //curr->next == nullptr
+                {
+                    Node* toBeDeleted = curr;
+                    prev->next = nullptr;
+                    delete toBeDeleted;
+                    size--;
+                    return true;
+                }
+            }
+            else //move the curr to curr->next 
+            {
+                curr = curr->next;
             }
         }
         cout << "Reached the end of the LL " << deleteData;
