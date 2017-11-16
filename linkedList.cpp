@@ -148,7 +148,7 @@ void LinkedList::printLL() const
     else //LL is not null 
     {
         Node* curr = head;
-        while( curr->next != nullptr)
+        while( curr != nullptr)
         {
             cout << curr->data << " "; 
             curr = curr->next;

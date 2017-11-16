@@ -17,7 +17,7 @@ int main()
     bool t1 = l1.insert(30);
     bool t2 = l1.insert(-13);
 	
-    cout << " The new root is: " << l1.getRoot() << " and size is:" << l1.getSize() << endl; 
+    cout << " The new root is: " << l1.getRoot() << " and size is: " << l1.getSize() << endl; 
    
     cout << "Testing for duplicate insert\n";
     bool duplicateInsert = l1.insert(25);
@@ -31,7 +31,7 @@ int main()
     cout << "After deleting the head you have...\n";
     cout << "LL after deleting head: ";
     l1.printLL();
-    cout << "The new root is: " << l1.getRoot() << " and size is:" << l1.getSize() << endl; 
+    cout << "The new root is: " << l1.getRoot() << " and size is: " << l1.getSize() << endl; 
    
     //Delete the objects on the heap
    
