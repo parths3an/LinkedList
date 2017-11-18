@@ -109,7 +109,8 @@ bool LinkedList::deleteNode(int deleteData)
         if ( curr->data == deleteData)
         {
             Node* prevHead = curr;
-            head = curr->next;
+	    head = curr->next;
+	    prevHead->next = nullptr;
             delete prevHead;
             cout << "Deleted the node " << deleteData << endl;
             size--;
@@ -142,7 +143,7 @@ bool LinkedList::deleteNode(int deleteData)
             }
             else //move the curr to curr->next 
             {
-                curr = curr->next;
+		//Don't do anything just traverse the curr in next iteration	
             }
         }
         cout << "Reached the end of the LL " << deleteData;

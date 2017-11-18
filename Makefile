@@ -1,15 +1,32 @@
+# A simple makefile for CSE 100 PA4
+
+CC=g++
+CXXFLAGS=-std=c++11
+LDFLAGS=-g
+
+# if passed "type=opt" at command-line, compile with "-O3" flag (otherwise use "-g" for debugging)
+
+ifeq ($(type),opt)
+	    CPPFLAGS += -O3
+		    LDFLAGS += -O3
+		else
+		    CPPFLAGS += -g
+			    LDFLAGS += -g
+			endif
+
 all: main
 
-main: main.o linkedList.o
-	g++ main.o linkedList.o -o main
+# Note: you do not have to include a *.cpp file if it aleady has a paired *.h file that is already included with class/method headers
 
-main.o: main.cpp
-	g++ -std=c++11 -c  main.cpp 
+main: main.o linkedList.o 
 
-linkedList.o: linkedList.cpp linkedList.h node.o 
-	g++ -std=c++11 -c linkedList.cpp 
-#So,if it just the .h file by itself you also have to compile it as it is
-node.o: node.h
-	g++ -std=c++11 -c node.h
-clean: 
-	rm *.o main
+main.o: main.cpp 
+
+linkedList.o: linkedList.h Node.o
+
+Node.o: node.h
+
+clean:
+		rm -f pathfinder *.o core*
+
+
